@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CONTACTO - DOMINGO ENCUADERNACIONES</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--BOOOTSTRAP V4.0-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-home">
+      <div class="col-md-3">
+        <a class="navbar-brand" href="home.html"><img id="brand" src="resources/images/logo.png"></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="col-md-5 text-center">
+          <ul class="navbar-nav mr-auto" id="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">LA&nbsp;EMPRESA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios">SERVICIOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tecnologia.html">TECNOLOG&Iacute;A</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="presupuesto.html">PRESUPUESTO&nbsp;ONLINE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contacto.html" style="color: #54A4DB;">CONTACTO</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="social-block">
+            <a href="#"><img class="twitter" id="social-img" src="resources/images/twitter-gray.png" /></a>
+            <a href="#"><img class="fb" id="social-img" src="resources/images/fb-gray.png" /></a>
+            <a href="#"><img class="google" id="social-img" src="resources/images/google-gray.png" /></a>
+            <a href="#"><img class="linkedin" id="social-img" src="resources/images/linkedin-gray.png" /></a>
+            <a href="#"><img class="pinterest" id="social-img" src="resources/images/pinterest-gray.png" /></a>
+            <a href="#"><img class="instagram" id="social-img" src="resources/images/instagram-gray.png" /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="contacto">
+      <h2><strong>CONTACTO</strong></h2></br>
+      <h4>DOMINGO ENCUADERNACIONES S.L</h4></br>
+      <div class="row contact-data">
+        <div class="col-md-4" onclick="window.open('https://www.google.es/maps/place/domingo+encuadernaciones+s.l./@41.5970251,2.0916397,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4eb3b7dd1bc85:0x9ed374088c1b8d93!8m2!3d41.5970211!4d2.0938284');" style="cursor: pointer;">
+          <img id="icons" src="resources/images/location.png">
+          <h6>DIRECCI&Oacute;N</h6>
+          <span>Carrer de la Garrotxa, 104, 08211</br> Castellar del Vall&egrave;s, Barcelona</span>
+        </div>
+        <div class="col-md-4" onclick="window.open('tel:+34 933 87 65 90');" style="cursor: pointer;">
+          <img id="icons" src="resources/images/phone.png">
+          <h6>TEL&Eacute;FONO</h6>
+          <span>+34 933 87 65 90</span>
+        </div>
+        <div class="col-md-4" onclick="window.open('mailto:info@domingosl.com');" style="cursor: pointer;">
+          <img id="icons" src="resources/images/mail.png">
+          <h6>E-MAIL</h6>
+          <span>info@domingosl.com</span>
+        </div>
+      </div>
+    </div>
+    <div id="map" style="width:100%;height:600px;"></div>
+
+    <script>
+      function myMap() {
+        var myLatlng = new google.maps.LatLng(41.5970251,2.093864,18);
+        var mapOptions = {
+          zoom: 17,
+          center: myLatlng,
+        }
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            animation: google.maps.Animation.DROP,
+            title:"DOMINGO ENCUADERNACIONES S.L"
+        });
+        marker.addListener('click', function() {
+          window.open('https://www.google.es/maps/place/domingo+encuadernaciones+s.l./@41.5970251,2.0916397,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4eb3b7dd1bc85:0x9ed374088c1b8d93!8m2!3d41.5970211!4d2.0938284','_blank');
+        });
+        marker.setMap(map);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXifxIluTOiISj6KnfaqwCFShpSSZCty0&callback=myMap"></script>
+  </body>
+
+  <footer class="page-footer font-small blue pt-3 mt-3" id="footer">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row" id="footer-row">
+        <div class="col-md-3">
+            <h5 class="text-uppercase" style="font-size:18px;"><strong>DOMINGO ENCUADERNACIONES S.L</strong></h5>
+            <p>
+              Carrer de la Garrotxa, 104, 08211</br>
+              Castellar del Vall&egrave;s, Barcelona</br>
+              Tfn. 933 87 65 90</br>
+              <strong>info@domingosl.com</strong>
+            </p>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="social-block-footer">
+            <a href="#"><img class="twitter" id="social-img" src="resources/images/twitter.png" /></a>
+            <a href="#"><img class="fb" id="social-img" src="resources/images/fb.png" /></a>
+            <a href="#"><img class="google" id="social-img" src="resources/images/google.png" /></a>
+            <a href="#"><img class="linkedin" id="social-img" src="resources/images/linkedin.png" /></a>
+            <a href="#"><img class="pinterest" id="social-img" src="resources/images/pinterest.png" /></a>
+            <a href="#"><img class="instagram" id="social-img" src="resources/images/instagram.png" /></a>
+          </div>
+          <div id="legal">
+            <span>
+              <a href="#"><strong>Copyright</strong>&emsp;&emsp;</a>
+              <a href="#"><strong>Legal Note</strong>&emsp;&emsp;</a>
+              <a href="#"><strong>Site Map</strong></a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PRESUPUESTO ONLINE - DOMINGO ENCUADERNACIONES</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--BOOOTSTRAP V4.0-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!--CAPTCHA-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!--FORMULARI-->
+    <script src="service/component/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+  	$(document).ready(function (e){
+  		$("#form").on('submit',(function(e){
+  			e.preventDefault();
+  			$("#mail-status").hide();
+  			$('#send-message').hide();
+  			$('#loader-icon').show();
+  			$.ajax({
+  				url: "service/contact.php",
+  				type: "POST",
+  				dataType:'json',
+  				data: {
+  				"name":$('input[name="name"]').val(),
+  				"email":$('input[name="email"]').val(),
+  				"tel":$('input[name="tel"]').val(),
+          "business":$('input[name="business"]').val(),
+  				"mensaje":$('textarea[name="mensaje"]').val(),
+          "file":$('input[name="file"]').val(),
+  				"g-recaptcha-response":$('textarea[id="g-recaptcha-response"]').val()},
+  				success: function(response){
+  				$("#mail-status").show();
+  				$('#loader-icon').hide();
+  				if(response.type == "error") {
+  					$('#send-message').show();
+  					$("#mail-status").attr("class","error");
+  				} else if(response.type == "message"){
+  					$('#send-message').hide();
+  					$("#mail-status").attr("class","success");
+  				}
+  				$("#mail-status").html(response.text);
+  				},
+  				error: function(){}
+  			});
+  		}));
+  	});
+	</script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-home">
+      <div class="col-md-3">
+        <a class="navbar-brand" href="home.html"><img id="brand" src="resources/images/logo.png"></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="col-md-5 text-center">
+          <ul class="navbar-nav mr-auto" id="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">LA&nbsp;EMPRESA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios">SERVICIOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tecnologia.html">TECNOLOG&Iacute;A</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="presupuesto.html" style="color: #54A4DB;">PRESUPUESTO&nbsp;ONLINE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">CONTACTO</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="social-block">
+            <a href="#"><img class="twitter" id="social-img" src="resources/images/twitter-gray.png" /></a>
+            <a href="#"><img class="fb" id="social-img" src="resources/images/fb-gray.png" /></a>
+            <a href="#"><img class="google" id="social-img" src="resources/images/google-gray.png" /></a>
+            <a href="#"><img class="linkedin" id="social-img" src="resources/images/linkedin-gray.png" /></a>
+            <a href="#"><img class="pinterest" id="social-img" src="resources/images/pinterest-gray.png" /></a>
+            <a href="#"><img class="instagram" id="social-img" src="resources/images/instagram-gray.png" /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="presupuesto">
+      <h2><strong>SOLICITAR PRESUPUESTO</strong></h2>
+      <form id="form" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+        <div class="col-md-12">
+          <div class="form-group col-md-5" style="display:inline-block;">
+            <label for="name">NOMBRE (requerido)</label>
+            <input type="name" class="form-control required" id="name" name="name">
+          </div>
+          <div class="form-group col-md-5" style="display:inline-block;">
+            <label for="email">E-MAIL (requerido)</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group col-md-5" style="display:inline-block;">
+            <label for="tel">TEL&Eacute;FONO (requerido)</label>
+            <input type="tel" class="form-control" id="tel" name="tel">
+          </div>
+          <div class="form-group col-md-5" style="display:inline-block;">
+            <label for="name">EMPRESA (requerido)</label>
+            <input type="name" class="form-control" id="business" name="business">
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          $(document).ready(function () {
+              $('#send-message').click(function() {
+                checked = $("input[type=checkbox]:checked").length;
+
+                if(!checked) {
+                  alert("Debes aceptar la pol\u00EDtica de privacidad");
+                  return false;
+                }
+              });
+          });
+        </script>
+
+        <div class="row">
+          <div class="form-group col-md-5" style="display:inline-block;margin-right:10px;padding-left:45px;">
+            <label for="mensaje">MENSAJE</label>
+            <textarea class="form-control" id="mensaje" rows="8" name="mensaje" style="width:100%;"></textarea>
+          </div>
+          <div class="form-group col-md-5" style="display:inline-block">
+            <label for="file">ADJUNTAR DOCUMENTO(.doc / .pdf)</label>
+            <input type="file" class="form-control-file" id="file" name="file"
+              accept="application/pdf, application/msword">
+            <div class="g-recaptcha" data-sitekey="6LczHFYUAAAAAPFamW-KdAnYFox_sELav2OM5Uv8"></div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" id="policy" name="policy">
+                  He le&iacute;do y acepto la Pol&iacute;tica de Privacidad
+              </label>
+            </div>
+            <button type="submit" id="send-message" style="clear:both;margin-top:15px;" class="btn btn-default">ENVIAR</button>
+            <div id="mail-status"></div>
+          </div>
+        </div>
+      </form>
+      <div id="loader-icon" style="display:none;"><img src="resources/images/loader.gif" /></div>
+    </div>
+  </body>
+
+  <footer class="page-footer font-small blue pt-3 mt-3" id="footer">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row" id="footer-row">
+        <div class="col-md-3">
+            <h5 class="text-uppercase" style="font-size:18px;"><strong>DOMINGO ENCUADERNACIONES S.L</strong></h5>
+            <p>
+              Carrer de la Garrotxa, 104, 08211</br>
+              Castellar del Vall&egrave;s, Barcelona</br>
+              Tfn. 933 87 65 90</br>
+              <strong>info@domingosl.com</strong>
+            </p>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <div class="social-block-footer">
+            <a href="#"><img class="twitter" id="social-img" src="resources/images/twitter.png" /></a>
+            <a href="#"><img class="fb" id="social-img" src="resources/images/fb.png" /></a>
+            <a href="#"><img class="google" id="social-img" src="resources/images/google.png" /></a>
+            <a href="#"><img class="linkedin" id="social-img" src="resources/images/linkedin.png" /></a>
+            <a href="#"><img class="pinterest" id="social-img" src="resources/images/pinterest.png" /></a>
+            <a href="#"><img class="instagram" id="social-img" src="resources/images/instagram.png" /></a>
+          </div>
+          <div id="legal">
+            <span>
+              <a href="#"><strong>Copyright</strong>&emsp;&emsp;</a>
+              <a href="#"><strong>Legal Note</strong>&emsp;&emsp;</a>
+              <a href="#"><strong>Site Map</strong></a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>

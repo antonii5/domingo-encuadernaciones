@@ -1,0 +1,52 @@
+body{
+  text-align: center;
+  overflow: hidden;
+}
+
+#video_presentation{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.container{
+  background-color: rgba(255, 255, 255, .45);
+  margin-top: 20%;
+  text-align: center;
+}
+
+.contingut{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo{
+  width: 25%;
+  height: 25%;
+  margin: 25px;
+}
+
+.footer h2{
+  text-align: left;
+  margin-left: 5%;
+  color: white;
+  margin-top: 8%;
+}
+
+#social-img{
+  width: 3%;
+  margin-right: 3px;
+}
+
+.social-block{
+  text-align: right;
+  margin-right: 5%;
+  margin-top: -60px;
+}
+
+.twitter:hover, .fb:hover, .google:hover, .linkedin:hover, .pinterest:hover, .instagram:hover{
+  opacity: 0.5;
+}

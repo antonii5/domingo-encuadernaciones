@@ -1,55 +1,282 @@
-html{
-  text-align: center;
-  overflow: hidden;
+body{
+  overflow-x: hidden;
   font-family: Helvetica;
-  font-style: italic;
-}
-#video_presentation{
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
 }
 
-.container{
-  background-color: rgba(255, 255, 255, .5);
-  margin-top: 20%;
-
+nav{
+  background-color: white;
+  z-index: 1;
 }
 
-#logo{
-  width: 25%;
-  height: 25%;
-  margin: 25px;
-}
-
-.footer{
-  position: absolute;
-  bottom: 0;
+#brand{
   width: 100%;
-  padding-top: 110px;
-
-}
-
-.social{
-  text-align: right;
-}
-
-.footer h2{
-  text-align: left;
-  margin-left: 5%;
-  font-size: 60px;
-  color: white;
+  padding: 0;
+  margin-left: 10px;
 }
 
 #social-img{
-  width: 5%;
-  margin-right: 5px;;
+  width: 8%;
+  margin-right: 3px;
 }
 
 .social-block{
-  text-align: right;
-  margin-right: 5%;
-  padding-top: 30px;
+  margin-top: 100px;
+  margin-left: 30px;
+}
+
+#nav{
+  margin-top: 100px;
+  margin-left: 20px;
+}
+
+#nav li{
+  font-size: 20px;
+}
+
+#arte{
+  position: absolute;
+  top: 20px;
+  z-index: 1;
+  margin-left: 40px;
+  color: white;
+}
+
+#maquinaria-text{
+  position: absolute;
+  top: 20px;
+  z-index: 1;
+  margin-left: 40px;
+}
+
+#maquinaria-info{
+  background-color: #EEEEEE;
+  font-family: Helvetica;
+  margin-bottom: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#maquinas-disp{
+  margin-top: 50px;
+  padding-right: 200px;
+  padding-left: 200px;
+
+}
+
+#maquinas-disp ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+#tabla-datos{
+  margin-top: 20px;
+}
+
+#compromiso{
+  position: absolute;
+  z-index: 1;
+  margin-left: 40px;
+  bottom: 0;
+}
+
+#empresa{
+  text-align: center;
+  margin-top: 100px;
+}
+
+#empresa p{
+  font-size: 30px;
+  font-family: Helvetica;
+  color: #706F6F;
+}
+
+#info{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#info-specify{
+  background-color: #EDEDED;
+  padding: 50px;
+}
+
+.row.vdivide [class*='col-']:not(:last-child):after {
+  background: white;
+  width: 3px;
+  content: "";
+  display:block;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  min-height: 70px;
+}
+
+
+#servicios{
+  background-color: #EDEDED;
+  text-align: center;
+}
+
+#servicios h1{
+  font-family: Helvetica;
+  color: #1D1D1B;
+  font-size: 70px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#servicios-content{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.counter{
+  font-family: Helvetica;
+  font-size: 50px;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.glyphicon-chevron-right{
+  color: black;
+  background-color: white;
+  padding: 4px 4px 4px 4px;
+  margin-top: 20px;
+}
+
+#fletxa{
+  text-decoration: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.7);
+  border-color: #2C6EB4;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+  border-color: #2C6EB4;
+  border: 2px solid cyan;
+}
+
+.text {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.twitter:hover, .fb:hover, .google:hover, .linkedin:hover, .pinterest:hover, .instagram:hover{
+  opacity: 0.5;
+}
+
+#separator{
+  height: 200px;
+  margin-bottom: -20px;
+}
+
+#footer{
+  background-color: #646363;
+  color: white;
+}
+
+#footer-row{
+  margin-left: 35px;
+  margin-top: 20px;
+}
+
+#footer-row p{
+  color:white;
+  font-size: 14px;
+}
+
+.social-block-footer{
+  width: 100%;
+  margin-left: 65px;
+}
+
+#reverse{
+  margin-left: 5px;
+}
+
+#legal{
+  margin-top: 40px;
+}
+
+#legal span{
+    font-style: bold;
+    font-family: Helvetica;
+    font-size: 14px;
+}
+
+#legal a{
+  color: white;
+  text-decoration: none;
+}
+
+.presupuesto, .contacto{
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.contact-data{
+  padding-left: 28px;
+  padding-bottom: 28px;
+}
+
+.presupuesto h2, .contacto h2,h4{
+  font-family: Helvetica;
+  color: #54A4DB;
+  margin-left: 28px;
+}
+
+#icons{
+  width: 7%;
+  position: absolute;
+  top: -3px;
+  left: -35px;
+}
+
+#form{
+  margin-top: 50px;
+}
+
+
+.g-recaptcha{
+  position: relative;
+  margin-top: 20px;
+}
+
+#map{
+  padding-bottom: 20px;
+}
+
+#maquinaria{
+  margin-top: 80px;
 }
